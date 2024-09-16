@@ -345,6 +345,5 @@ function setboard() {
     }
 }
 setboard()
-document.getElementById(35).innerHTML = '<img src="Images/whiteking.png">'
 let turn = 'white'
 document.getElementById("turn").innerHTML = "White's Turn"
