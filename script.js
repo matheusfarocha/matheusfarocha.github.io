@@ -7,6 +7,7 @@ let incheckcolor;
 const boxes = document.getElementsByClassName("box")
 const boxeslength = boxes.length
 let checking_piece
+let turn
 
 function select(element, action) {
         if (selected == false && element.innerHTML) {
@@ -439,7 +440,7 @@ function isincheck(king) {
 }
 function startgame() {
     setboard()
-    let turn = 'white'
+    turn = 'white'
     document.getElementById("turn").innerHTML = "White's Turn"
     for (let i = 0; i < boxeslength; i++) {
         boxes[i].onclick = function() {
