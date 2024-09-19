@@ -10,12 +10,12 @@ let checking_piece
 
 function select(element, action) {
         if (selected == false && element.innerHTML) {
-            //if (element.innerHTML[17] == 'b' && turn == 'black' || element.innerHTML[17] == 'w' && turn == 'white') {
+            if (element.innerHTML[17] == 'b' && turn == 'black' || element.innerHTML[17] == 'w' && turn == 'white') {
                 element.classList.add('selected');
                 selected_element = element;
                 selected = true;
                 highlight_moves(action);
-            //}
+            }
         }
         else if (element.innerHTML){
             selected_element.classList.remove('selected');
