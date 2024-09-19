@@ -25,6 +25,7 @@ div {
     width:50px;
     border:1px solid black;
     text-align: center;  
+    user-select: none;
 }
 
 

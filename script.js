@@ -11,12 +11,12 @@ let turn
 
 function select(element, action) {
         if (selected == false && element.innerHTML) {
-            if (element.innerHTML[17] == 'b' && turn == 'black' || element.innerHTML[17] == 'w' && turn == 'white') {
+            //if (element.innerHTML[17] == 'b' && turn == 'black' || element.innerHTML[17] == 'w' && turn == 'white') {
                 element.classList.add('selected');
                 selected_element = element;
                 selected = true;
                 highlight_moves(action);
-            }
+            //}
         }
         else if (element.innerHTML){
             selected_element.classList.remove('selected');
@@ -34,7 +34,7 @@ function highlight_moves(action) {
     let id = parseInt(selected_element.id);
     let element;
     switch (true) {
-        case selected_element.innerHTML == '<img src="Images/blackpawn.png">' || selected_element.innerHTML == '<img src="Images/whitepawn.png">': // if its a pawn
+        case selected_element.innerHTML[22] == 'p': // if its a pawn
             // check whether it is a black pawn or white pawn and adjust increments
             let leftincrement, rightincrement
             if (selected_element.innerHTML[17] == 'b') {
@@ -89,7 +89,7 @@ function highlight_moves(action) {
                     element = document.getElementById(id)
                     if (element.innerHTML) {break;} //if theres something there
                     else {
-                        element.innerHTML = '<img src = "Images/ball.jpeg">'
+                        element.innerHTML = '<img src="Images/ball.jpeg" draggable="false">'
                         element.addEventListener("click", moveclick)
                         element.onclick = null
                         highlighted[highlights] = element
@@ -99,7 +99,7 @@ function highlight_moves(action) {
                 }
             }
             break;
-        case selected_element.innerHTML == '<img src="Images/blackcastle.png">' || selected_element.innerHTML == '<img src="Images/whitecastle.png">': // if its a castle
+        case selected_element.innerHTML[22] == 'c': // if its a castle
             // horizontal mapping (right and left)
             full_map(id, 1, action) 
             full_map(id, -1, action)
@@ -107,33 +107,33 @@ function highlight_moves(action) {
             full_map(id, 10, action)
             full_map(id, -10, action)
             break;
-        case selected_element.innerHTML == '<img src="Images/blackhorse.png">' || selected_element.innerHTML == '<img src="Images/whitehorse.png">': // if its a horse
+        case selected_element.innerHTML[22] == 'h': // if its a horse
             // check all horse angles
             angles = [21, 19, -21, -19, 12, 8, -12, -8];
             for (let i = 0; i < 8; i++) {
                 horsecheck(id, angles[i], action)
             }
             break;
-        case selected_element.innerHTML == '<img src="Images/blackbishop.png">' || selected_element.innerHTML == '<img src="Images/whitebishop.png">': // if its a bishop
+        case selected_element.innerHTML[22] == 'b': // if its a bishop
             full_map(id, 11, action)
             full_map(id, 9, action)
             full_map(id, -11, action)
             full_map(id, -9, action)
             break;
-        case selected_element.innerHTML == '<img src="Images/blackqueen.png">' || selected_element.innerHTML == '<img src="Images/whitequeen.png">': // if its a queen
+        case selected_element.innerHTML[22] == 'q': // if its a queen
             angles = [1, -1, 10, -10, 11, 9, -11, -9]
             for (let i = 0; i < 8; i++) {
                 full_map(id, angles[i], action)
             }
             break;
-        case selected_element.innerHTML == '<img src="Images/blackking.png">' || selected_element.innerHTML == '<img src="Images/whiteking.png">': // if its a king
+        case selected_element.innerHTML[22] == 'k': // if its a king
             // Checking if king can move to specified angles
             angles = [1,-1,9,10,11,-9,-10,-11]
             for (let i = 0; i < 8; i++) {
                 if ((id + angles[i])/10 <= 7.8 && (id + angles[i])/10 >= 0 && (id + angles[i])%10 <= 8 && (id + angles[i])%10 >= 1) {
                     element = document.getElementById(id + angles[i])
                     if (can_king_move(id, angles[i]) && !document.getElementById(id + angles[i]).innerHTML) {
-                        element.innerHTML = '<img src = "Images/ball.jpeg">'
+                        element.innerHTML = '<img src="Images/ball.jpeg" draggable="false">'
                         element.addEventListener("click", moveclick)
                         element.onclick = null
                         highlighted[highlights] = element
@@ -246,7 +246,7 @@ function horsecheck(id, increment, action) {
         if (!document.getElementById(id+increment).innerHTML) {
             if (action == null || action == 'move') {
                 element = document.getElementById(id + increment)
-                element.innerHTML = '<img src = "Images/ball.jpeg">'
+                element.innerHTML = '<img src="Images/ball.jpeg" draggable="false">'
                 element.addEventListener("click", moveclick)
                 element.onclick = null
                 highlighted[highlights] = element
@@ -274,7 +274,7 @@ function full_map(id, increment, action) {
         if (!document.getElementById(id + increment).innerHTML) {
             if (action == null || action == 'move') {
                 element = document.getElementById(id + increment)
-                element.innerHTML = '<img src = "Images/ball.jpeg">'
+                element.innerHTML = '<img src="Images/ball.jpeg" draggable="false">'
                 element.addEventListener("click", moveclick)
                 element.onclick = null
                 highlighted[highlights] = element
@@ -552,7 +552,7 @@ function can_someone_go_here(tempid, checked_team) {
 function remove_highlights() {
     for (let i = 0; i < highlights; i++) {
         highlighted[i].removeEventListener("click", moveclick)
-        if (highlighted[i].innerHTML === '<img src="Images/ball.jpeg">') {
+        if (highlighted[i].innerHTML === '<img src="Images/ball.jpeg" draggable="false">') {
             highlighted[i].innerHTML = '' 
         }
         else if (highlighted[i].classList.contains('red')) {
@@ -566,38 +566,38 @@ function remove_highlights() {
 function setboard() {    
     /* Set Black's Board */
     for (let i = 11; i <= 18; i++) {
-        document.getElementById(i).innerHTML = '<img src="Images/blackpawn.png">'
+        document.getElementById(i).innerHTML = '<img src="Images/blackpawn.png" draggable="false">'
     }  
-    document.getElementById("1").innerHTML = '<img src="Images/blackcastle.png">'
-    document.getElementById("8").innerHTML = '<img src="Images/blackcastle.png">'
+    
+    document.getElementById("1").innerHTML = '<img src="Images/blackcastle.png" draggable="false">'
+    document.getElementById("8").innerHTML = '<img src="Images/blackcastle.png" draggable="false">'
+    document.getElementById("2").innerHTML = '<img src="Images/blackhorse.png" draggable="false">'
+    document.getElementById("7").innerHTML = '<img src="Images/blackhorse.png" draggable="false">'
 
-    document.getElementById("2").innerHTML = '<img src="Images/blackhorse.png">'
-    document.getElementById("7").innerHTML = '<img src="Images/blackhorse.png">'
 
+    document.getElementById("3").innerHTML = '<img src="Images/blackbishop.png" draggable="false">'
+    document.getElementById("6").innerHTML = '<img src="Images/blackbishop.png" draggable="false">'
 
-    document.getElementById("3").innerHTML = '<img src="Images/blackbishop.png">'
-    document.getElementById("6").innerHTML = '<img src="Images/blackbishop.png">'
-
-    document.getElementById("5").innerHTML = '<img src="Images/blackking.png">'
-    document.getElementById("4").innerHTML = '<img src="Images/blackqueen.png">'
+    document.getElementById("5").innerHTML = '<img src="Images/blackking.png" draggable="false">'
+    document.getElementById("4").innerHTML = '<img src="Images/blackqueen.png" draggable="false">'
 
 
     /* Set White's Board */
     for (let i = 61; i <= 68; i++) {
-        document.getElementById(i).innerHTML = '<img src="Images/whitepawn.png">'
+        document.getElementById(i).innerHTML = '<img src="Images/whitepawn.png" draggable="false">'
     }  
-    document.getElementById("71").innerHTML = '<img src="Images/whitecastle.png">'
-    document.getElementById("78").innerHTML = '<img src="Images/whitecastle.png">'
+    document.getElementById("71").innerHTML = '<img src="Images/whitecastle.png" draggable="false">'
+    document.getElementById("78").innerHTML = '<img src="Images/whitecastle.png" draggable="false">'
 
-    document.getElementById("72").innerHTML = '<img src="Images/whitehorse.png">'
-    document.getElementById("77").innerHTML = '<img src="Images/whitehorse.png">'
+    document.getElementById("72").innerHTML = '<img src="Images/whitehorse.png" draggable="false">'
+    document.getElementById("77").innerHTML = '<img src="Images/whitehorse.png" draggable="false">'
 
 
-    document.getElementById("73").innerHTML = '<img src="Images/whitebishop.png">'
-    document.getElementById("76").innerHTML = '<img src="Images/whitebishop.png">'
+    document.getElementById("73").innerHTML = '<img src="Images/whitebishop.png" draggable="false">'
+    document.getElementById("76").innerHTML = '<img src="Images/whitebishop.png" draggable="false">'
 
-    document.getElementById("75").innerHTML = '<img src="Images/whiteking.png">'
-    document.getElementById("74").innerHTML = '<img src="Images/whitequeen.png">'
+    document.getElementById("75").innerHTML = '<img src="Images/whiteking.png" draggable="false">'
+    document.getElementById("74").innerHTML = '<img src="Images/whitequeen.png" draggable="false">'
 
     /* Making sure nothing is in the middle */
 
