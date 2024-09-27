@@ -8,98 +8,87 @@
         <link rel="icon" href="Images/Chess_22715.ico" type="image/x-icon">
     </head>
     <body>
-        <!-- Page content goes here -->
-        <table>
-            <thead>
-                <th>
-                    <tr>
-                        <div id="turn">Whites Turn</div>
-                    </tr>
-                </th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="box color1" id="1" onclick="select(this)">1</td>
-                    <td class="box color2" id="2" onclick="select(this)">2</td>
-                    <td class="box color1" id="3" onclick="select(this)">3</td>
-                    <td class="box color2" id="4" onclick="select(this)">4</td>
-                    <td class="box color1" id="5" onclick="select(this)">5</td>
-                    <td class="box color2" id="6" onclick="select(this)">6</td>
-                    <td class="box color1" id="7" onclick="select(this)">7</td>
-                    <td class="box color2" id="8" onclick="select(this)">8</td>
-                </tr>
-                <tr>
-                    <td class="box color2" id="11" onclick="select(this)">11</td>
-                    <td class="box color1" id="12" onclick="select(this)">12</td>
-                    <td class="box color2" id="13" onclick="select(this)">13</td>
-                    <td class="box color1" id="14" onclick="select(this)">14</td>
-                    <td class="box color2" id="15" onclick="select(this)">15</td>
-                    <td class="box color1" id="16" onclick="select(this)">16</td>
-                    <td class="box color2" id="17" onclick="select(this)">17</td>
-                    <td class="box color1" id="18" onclick="select(this)">18</td>
-                </tr>
-                <tr>
-                    <td class="box color1" id="21" onclick="select(this)">21</td>
-                    <td class="box color2" id="22" onclick="select(this)">22</td>
-                    <td class="box color1" id="23" onclick="select(this)">23</td>
-                    <td class="box color2" id="24" onclick="select(this)">24</td>
-                    <td class="box color1" id="25" onclick="select(this)">25</td>
-                    <td class="box color2" id="26" onclick="select(this)">26</td>
-                    <td class="box color1" id="27" onclick="select(this)">27</td>
-                    <td class="box color2" id="28" onclick="select(this)">28</td>
-                </tr>
-                <tr>
-                    <td class="box color2" id="31" onclick="select(this)">31</td>
-                    <td class="box color1" id="32" onclick="select(this)">32</td>
-                    <td class="box color2" id="33" onclick="select(this)">33</td>
-                    <td class="box color1" id="34" onclick="select(this)">34</td>
-                    <td class="box color2" id="35" onclick="select(this)">35</td>
-                    <td class="box color1" id="36" onclick="select(this)">36</td>
-                    <td class="box color2" id="37" onclick="select(this)">37</td>
-                    <td class="box color1" id="38" onclick="select(this)">38</td>
-                </tr>
-                <tr>
-                    <td class="box color1" id="41" onclick="select(this)">41</td>
-                    <td class="box color2" id="42" onclick="select(this)">42</td>
-                    <td class="box color1" id="43" onclick="select(this)">43</td>
-                    <td class="box color2" id="44" onclick="select(this)">44</td>
-                    <td class="box color1" id="45" onclick="select(this)">45</td>
-                    <td class="box color2" id="46" onclick="select(this)">46</td>
-                    <td class="box color1" id="47" onclick="select(this)">47</td>
-                    <td class="box color2" id="48" onclick="select(this)">48</td>
-                </tr>
-                <tr>
-                    <td class="box color2" id="51" onclick="select(this)">51</td>
-                    <td class="box color1" id="52" onclick="select(this)">52</td>
-                    <td class="box color2" id="53" onclick="select(this)">53</td>
-                    <td class="box color1" id="54" onclick="select(this)">54</td>
-                    <td class="box color2" id="55" onclick="select(this)">55</td>
-                    <td class="box color1" id="56" onclick="select(this)">56</td>
-                    <td class="box color2" id="57" onclick="select(this)">57</td>
-                    <td class="box color1" id="58" onclick="select(this)">58</td>
-                </tr>
-                <tr>
-                    <td class="box color1" id="61" onclick="select(this)">61</td>
-                    <td class="box color2" id="62" onclick="select(this)">62</td>
-                    <td class="box color1" id="63" onclick="select(this)">63</td>
-                    <td class="box color2" id="64" onclick="select(this)">64</td>
-                    <td class="box color1" id="65" onclick="select(this)">65</td>
-                    <td class="box color2" id="66" onclick="select(this)">66</td>
-                    <td class="box color1" id="67" onclick="select(this)">67</td>
-                    <td class="box color2" id="68" onclick="select(this)">68</td>
-                </tr>
-                <tr>
-                    <td class="box color2" id="71" onclick="select(this)">71</td>
-                    <td class="box color1" id="72" onclick="select(this)">72</td>
-                    <td class="box color2" id="73" onclick="select(this)">73</td>
-                    <td class="box color1" id="74" onclick="select(this)">74</td>
-                    <td class="box color2" id="75" onclick="select(this)">75</td>
-                    <td class="box color1" id="76" onclick="select(this)">76</td>
-                    <td class="box color2" id="77" onclick="select(this)">77</td>
-                    <td class="box color1" id="78" onclick="select(this)">78</td>
-                </tr>
-            </tbody>
-        </table>
+        <header>
+            <div class='inline' id="queen"></div>
+            <div class='inline' id="castle"></div>
+            <div id="turn" class="turn"></div>
+            <div class='inline' id="bishop"></div>
+            <div class='inline' id="horse"></div>
+        </header>
+        <div class="chess-board">
+            <!-- Layer 1 -->
+            <div class="box color1" id="1" onclick="select(this)">1</div>
+            <div class="box color2" id="2" onclick="select(this)">11</div>
+            <div class="box color1" id="3" onclick="select(this)">21</div>
+            <div class="box color2" id="4" onclick="select(this)">31</div>
+            <div class="box color1" id="5" onclick="select(this)">41</div>
+            <div class="box color2" id="6" onclick="select(this)">51</div>
+            <div class="box color1" id="7" onclick="select(this)">61</div>
+            <div class="box color2" id="8" onclick="select(this)">71</div>
+            <!-- Layer 2 -->
+            <div class="box color2" id="11" onclick="select(this)">2</div>
+            <div class="box color1" id="12" onclick="select(this)">12</div>
+            <div class="box color2" id="13" onclick="select(this)">22</div>
+            <div class="box color1" id="14" onclick="select(this)">32</div>
+            <div class="box color2" id="15" onclick="select(this)">42</div>
+            <div class="box color1" id="16" onclick="select(this)">52</div>
+            <div class="box color2" id="17" onclick="select(this)">62</div>
+            <div class="box color1" id="18" onclick="select(this)">72</div>
+            <!-- Layer 3 -->
+            <div class="box color1" id="21" onclick="select(this)">3</div>
+            <div class="box color2" id="22" onclick="select(this)">13</div>
+            <div class="box color1" id="23" onclick="select(this)">23</div>
+            <div class="box color2" id="24" onclick="select(this)">33</div>
+            <div class="box color1" id="25" onclick="select(this)">43</div>
+            <div class="box color2" id="26" onclick="select(this)">53</div>
+            <div class="box color1" id="27" onclick="select(this)">63</div>
+            <div class="box color2" id="28" onclick="select(this)">73</div>
+            <!-- Layer 4 -->
+            <div class="box color2" id="31" onclick="select(this)">4</div>
+            <div class="box color1" id="32" onclick="select(this)">14</div>
+            <div class="box color2" id="33" onclick="select(this)">24</div>
+            <div class="box color1" id="34" onclick="select(this)">34</div>
+            <div class="box color2" id="35" onclick="select(this)">44</div>
+            <div class="box color1" id="36" onclick="select(this)">54</div>
+            <div class="box color2" id="37" onclick="select(this)">64</div>
+            <div class="box color1" id="38" onclick="select(this)">74</div>
+            <!-- Layer 5 -->
+            <div class="box color1" id="41" onclick="select(this)">5</div>
+            <div class="box color2" id="42" onclick="select(this)">15</div>
+            <div class="box color1" id="43" onclick="select(this)">25</div>
+            <div class="box color2" id="44" onclick="select(this)">35</div>
+            <div class="box color1" id="45" onclick="select(this)">45</div>
+            <div class="box color2" id="46" onclick="select(this)">55</div>
+            <div class="box color1" id="47" onclick="select(this)">65</div>
+            <div class="box color2" id="48" onclick="select(this)">75</div>
+            <!-- Layer 6 -->
+            <div class="box color2" id="51" onclick="select(this)">6</div>
+            <div class="box color1" id="52" onclick="select(this)">16</div>
+            <div class="box color2" id="53" onclick="select(this)">26</div>
+            <div class="box color1" id="54" onclick="select(this)">36</div>
+            <div class="box color2" id="55" onclick="select(this)">46</div>
+            <div class="box color1" id="56" onclick="select(this)">56</div>
+            <div class="box color2" id="57" onclick="select(this)">66</div>
+            <div class="box color1" id="58" onclick="select(this)">76</div>  
+            <!-- Layer 7 -->
+            <div class="box color1" id="61" onclick="select(this)">7</div>
+            <div class="box color2" id="62" onclick="select(this)">17</div>
+            <div class="box color1" id="63" onclick="select(this)">27</div>
+            <div class="box color2" id="64" onclick="select(this)">37</div>
+            <div class="box color1" id="65" onclick="select(this)">47</div>
+            <div class="box color2" id="66" onclick="select(this)">57</div>
+            <div class="box color1" id="67" onclick="select(this)">67</div>
+            <div class="box color2" id="68" onclick="select(this)">77</div> 
+            <!-- Layer 8 -->
+            <div class="box color2" id="71" onclick="select(this)">8</div>
+            <div class="box color1" id="72" onclick="select(this)">8</div>
+            <div class="box color2" id="73" onclick="select(this)">28</div>
+            <div class="box color1" id="74" onclick="select(this)">38</div>
+            <div class="box color2" id="75" onclick="select(this)">48</div>
+            <div class="box color1" id="76" onclick="select(this)">58</div>
+            <div class="box color2" id="77" onclick="select(this)">68</div>
+            <div class="box color1" id="78" onclick="select(this)">78</div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
