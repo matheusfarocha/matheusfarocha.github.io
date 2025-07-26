@@ -1,0 +1,15 @@
+#header  {
+    background-color: #333;
+    display:flex
+}
+#header li,#header a {
+    display:block;
+    padding:12px 14px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+}
+
+#header a:hover {
+    background-color:#111;
+}
