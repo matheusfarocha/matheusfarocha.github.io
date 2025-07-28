@@ -30,11 +30,14 @@ body {
     background-color:#111;
 }
 
+.about {
+    width:100%;
+}
 .intro_row {
-
     display:flex;
     align-items:flex-start;
     gap: 24px;
+
 
 }
 
@@ -66,3 +69,7 @@ body {
     text-align:center;
 }
 
+.new_section {
+
+    padding-top:300px;
+}
