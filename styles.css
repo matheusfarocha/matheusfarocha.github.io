@@ -1,7 +1,12 @@
+html {
+    scroll-padding-top: 100px; 
+}
+
 body {
     padding-top:35px;
-    background-color:azure
+    background-color:azure;
 }
+
 #header  {
     background-color: #333;
     display:flex;
@@ -11,6 +16,7 @@ body {
     top:0;
     left:0;
     overflow-x: auto;
+    z-index:1000;
 }
 #header li,#header a {
     display:flex;
@@ -79,9 +85,10 @@ body {
 }
 
 .new_section {
-
-    padding-top:350px;
+    margin-top:350px;
+    margin-bottom:10px;
 }
+
 @media (max-width: 900px) {
     .intro_row {
         flex-direction:column;
@@ -99,4 +106,29 @@ body {
         margin-top:20px;
 
     }
+}
+.new_section {
+    text-align: center;
+}
+#projects-container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+
+}
+
+.project {
+    background-color: #FFFFFF;
+    padding: 1%;
+    margin: 1%;
+    width: 300px;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0 0 5px grey;
+}
+.project img {
+    width:100%;
+    padding:10px;
+    border-radius: 30px;
+    height:270px;
 }

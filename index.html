@@ -10,10 +10,10 @@
 <body>
     <nav>
         <ul id="header">
-            <li><img src="matheus_fonseca_logo_circular_transparent.png" height="40"></li>
+            <li><img src="misc/matheus_fonseca_logo_circular_transparent.png" height="40"></li>
             <li><a href="./index.html">About</a></li>
-            <li><a href="./index.html">Projects</a></li>
-            <li><a href="./index.html">Contact Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
         </ul>
     </nav>
     <section class="about">
@@ -22,11 +22,11 @@
                 <h2>Matheus Fonseca</h2>
                 <p>I’m an Aspiring Software Engineer with strong foundations in Computer Science principles due to CS50x, Codepath Tip101, and self-study. Fluent in algorithms and data structures, I strive to think outside the box, inventing new ways to solve problems. In fact, my favorite word is “why”: “why does this work like it does?”, “why do we do it this way instead of this other way”. This mindset causes me to approach every problem with curiosity which I consider the heart of learning.</p>
             </div>
-            <img class="profile_pic" src="prof_photo.JPG">
+            <img class="profile_pic" src="misc/prof_photo.JPG">
         </div>
         <div class="menu">
             <div class="buttons">
-                <a href="/resume.pdf" class="btn btn-primary" target="_blank">Resume</a>
+                <a href="misc/resume.pdf" class="btn btn-primary" target="_blank">Resume</a>
                 <button type="button" class="btn btn-primary">Contact</button> 
             </div>    
             <div class="icons">
@@ -35,11 +35,21 @@
             </div>
         </div>
     </section>
-    <section id="projects">
-        <h2 class="new_section">Projects (WIP)</h2>
-        <a href="https://github.com/matheusfarocha/SendToMac">SendToMac</a>
-        <a href="./chess">Chess</a>
-    </section>
+    <h2 class="new_section" id="projects">Projects</h2>
+    <div id="projects-container">
+        <div class="project">
+            <img src="misc/sendtomac_icon.png">
+            <h2>SendToMac</h2>
+            <p>A cross-platform application that lets users transfer text and links from iOS to macOS, even if the Mac is offline. Built with Python, AppKit, Rumps, SwiftUI, it features real-time notifications, scheduling/expiration logic, and secure REST API communication for reliable and seamless cross-device workflows.</p>
+            <a href="https://github.com/matheusfarocha/SendToMac">Github</a>
+        </div>
+        <div class="project">
+            <img src="misc/chess_img.png">
+            <h2>Chess</h2>
+            <p>An interactive web application that enforces all chess rules, including check, checkmate, stalemate, and legal move validation. Designed with HTML, CSS, and JavaScript, it features modular move logic, real-time piece interaction, and a responsive UI for smooth and accurate gameplay.</p>
+            <a href="./chess">Site</a>
+        </div>
+    </div>
     <section id="contact" class="new_section">
         <h2>Contact Me (WIP)</h2>
     </section>
