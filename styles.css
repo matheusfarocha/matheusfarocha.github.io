@@ -87,6 +87,7 @@ body {
 .new_section {
     margin-top:350px;
     margin-bottom:10px;
+    text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -107,10 +108,7 @@ body {
 
     }
 }
-.new_section {
-    text-align: center;
-}
-#projects-container {
+#projects-container, #hackathon-container{
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
