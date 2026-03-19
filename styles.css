@@ -112,7 +112,6 @@ body {
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
-
 }
 
 .project {
@@ -123,12 +122,25 @@ body {
     text-align: center;
     border-radius: 30px;
     box-shadow: 0 0 5px grey;
+    display: flex;
+    flex-direction: column;
 }
+.project-featured {
+    width: 340px;
+    border: 2px solid #e8a200;
+    box-shadow: 0 0 16px rgba(232, 162, 0, 0.3);
+}
+
+.project .tech-tags {
+    margin-top: auto !important;
+}
+
 .project img {
     width:100%;
     padding:10px;
     border-radius: 30px;
     height:270px;
+    object-fit: contain;
 }
 
 #contact {
